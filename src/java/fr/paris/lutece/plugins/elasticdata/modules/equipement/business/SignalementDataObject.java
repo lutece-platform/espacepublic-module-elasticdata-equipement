@@ -31,10 +31,9 @@
  *
  * License 1.0
  */
-package fr.paris.lutece.plugins.elasticdata.modules.dansmarue.business;
+package fr.paris.lutece.plugins.elasticdata.modules.equipement.business;
 
 import fr.paris.lutece.plugins.elasticdata.business.AbstractDataObject;
-import java.sql.Date;
 
 /**
  * SignalementDataObject

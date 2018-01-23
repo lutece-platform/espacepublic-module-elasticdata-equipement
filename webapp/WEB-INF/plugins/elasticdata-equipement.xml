@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?><plug-in>
-    <name>elasticdata-dansmarue</name>
+    <name>elasticdata-equipement</name>
     <class>fr.paris.lutece.portal.service.plugin.PluginDefaultImplementation</class>
-    <version>1.0.1-SNAPSHOT</version>
+    <version>1.0.0-SNAPSHOT</version>
     <documentation/>
     <installation/>
     <changes/>
     <user-guide/>
-    <description>module.elasticdata.dansmarue.module.description</description>
-    <provider>module.elasticdata.dansmarue.module.provider</provider>
+    <description>module.elasticdata.equipement.module.description</description>
+    <provider>module.elasticdata.equipement.module.provider</provider>
     <provider-url>http://lutece.paris.fr</provider-url>
     <icon-url>images/admin/skin/plugins/elasticdata/elasticdata.png</icon-url>
     <copyright>Copyright (c) 2017 City of Paris</copyright>

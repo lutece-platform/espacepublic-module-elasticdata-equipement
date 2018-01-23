@@ -31,23 +31,23 @@
  *
  * License 1.0
  */
-package fr.paris.lutece.plugins.elasticdata.modules.dansmarue.business;
+package fr.paris.lutece.plugins.elasticdata.modules.equipement.business;
+
+import java.sql.Timestamp;
+import java.util.ArrayList;
+import java.util.Collection;
 
 import fr.paris.lutece.plugins.elasticdata.business.DataObject;
 import fr.paris.lutece.portal.service.plugin.Plugin;
 import fr.paris.lutece.portal.service.util.AppPropertiesService;
 import fr.paris.lutece.util.sql.DAOUtil;
-import java.sql.Date;
-import java.sql.Timestamp;
-import java.util.ArrayList;
-import java.util.Collection;
 
 /**
  * SignalementDAO
  */
 public class SignalementDAO
 {
-    private static final String PROPERTY_CANAL_PREFIX = "elasticdata-dansmarue.canal.";
+    private static final String PROPERTY_CANAL_PREFIX = "elasticdata-equipement.canal.";
     private static final String CANAL_S = "S";
     private static final String CANAL_B = "B";
     private static final String CANAL_A = "A";
@@ -63,19 +63,19 @@ public class SignalementDAO
             + " date_min.min as \"date_prise_en_compte\","
             + " date_max.max as \"date_cloture\","
             + " ts.libelle as \"categorie\", tss.libelle as \"categorie_parent\", tsss.libelle as \"categorie_grandparent\" "
-            + " FROM signalement_signalement s "
-            + " INNER JOIN signalement_adresse a ON s.id_signalement = a.fk_id_signalement "
-            + " INNER JOIN signalement_type_signalement ts ON ts.id_type_signalement = s.fk_id_type_signalement "
-            + " LEFT JOIN signalement_type_signalement tss ON ts.fk_id_type_signalement = tss.id_type_signalement "
-            + " LEFT JOIN signalement_type_signalement tsss ON tss.fk_id_type_signalement = tsss.id_type_signalement "
-            + " LEFT JOIN signalement_type_signalement_alias stsa ON stsa.fk_id_type_signalement = s.fk_id_type_signalement "
+            + " FROM equipement_signalement s "
+            + " INNER JOIN equipement_adresse a ON s.id_signalement = a.fk_id_signalement "
+            + " INNER JOIN equipement_type_signalement ts ON ts.id_type_signalement = s.fk_id_type_signalement "
+            + " LEFT JOIN equipement_type_signalement tss ON ts.fk_id_type_signalement = tss.id_type_signalement "
+            + " LEFT JOIN equipement_type_signalement tsss ON tss.fk_id_type_signalement = tsss.id_type_signalement "
+            + " LEFT JOIN equipement_type_signalement_alias stsa ON stsa.fk_id_type_signalement = s.fk_id_type_signalement "
             + " INNER JOIN workflow_resource_workflow wrw ON  s.id_signalement=wrw.id_resource AND wrw.resource_type='SIGNALEMENT_SIGNALEMENT' "
             + " INNER JOIN workflow_state ws ON wrw.id_state=ws.id_state"
             + " LEFT JOIN ("
-            + "     select ss.id_signalement, min(wrh.creation_date) from signalement_signalement ss inner join workflow_resource_history wrh on ss.id_signalement = wrh.id_resource and wrh.user_access_code != 'auto' group by ss.id_signalement order by ss.id_signalement"
+            + "     select ss.id_signalement, min(wrh.creation_date) from equipement_signalement ss inner join workflow_resource_history wrh on ss.id_signalement = wrh.id_resource and wrh.user_access_code != 'auto' group by ss.id_signalement order by ss.id_signalement"
             + " ) date_min on s.id_signalement = date_min.id_signalement"
             + " LEFT JOIN ("
-            + "     select ss.id_signalement, max(wrh.creation_date) from signalement_signalement ss inner join workflow_resource_workflow wrw on ss.id_signalement = wrw.id_resource inner join workflow_resource_history wrh on ss.id_signalement = wrh.id_resource where wrw.id_state in (10,11) group by ss.id_signalement  order by ss.id_signalement"
+            + "     select ss.id_signalement, max(wrh.creation_date) from equipement_signalement ss inner join workflow_resource_workflow wrw on ss.id_signalement = wrw.id_resource inner join workflow_resource_history wrh on ss.id_signalement = wrh.id_resource where wrw.id_state in (10,11) group by ss.id_signalement  order by ss.id_signalement"
             + " ) date_max on s.id_signalement = date_max.id_signalement";
 
     public Collection<DataObject> selectSignalementDataObjectsList( Plugin plugin )

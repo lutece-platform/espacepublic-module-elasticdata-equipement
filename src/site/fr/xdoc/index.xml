@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document>
     <properties>
-        <title>Module elasticdata dansmarue</title>
+        <title>Module elasticdata equipement</title>
     </properties>
     <body>
-        <section name="Module elasticdata dansmarue">
+        <section name="Module elasticdata equipement">
             <p>
                 <img src="images/elastic.png" />
             </p>
             <subsection name="Introduction">
-                <p>Module de production de données DansMaRue pour ElasticSearch / Kibana</p>
+                <p>Module de production de données DansMaRue-equipement pour ElasticSearch / Kibana</p>
             </subsection>
         </section>
     </body>
