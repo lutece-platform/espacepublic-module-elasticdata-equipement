@@ -32,40 +32,56 @@
  * License 1.0
  */
 
-package fr.paris.lutece.plugins.elasticdata.modules.dansmarue.business;
-
-import fr.paris.lutece.plugins.elasticdata.business.AbstractDataSource;
-import fr.paris.lutece.plugins.elasticdata.business.DataObject;
-import fr.paris.lutece.portal.service.plugin.Plugin;
-import fr.paris.lutece.portal.service.plugin.PluginService;
-import java.util.Collection;
+package fr.paris.lutece.plugins.elasticdata.modules.equipement.business;
 
 /**
- * SignalementDataSource
+ * Location
  */
-public class SignalementDataSource extends AbstractDataSource
+public class Location
 {
-    private static final String PLUGIN_NAME = "elasticdata-dansmarue";
-
-    private static Plugin _plugin = PluginService.getPlugin( PLUGIN_NAME );
+    // Variables declarations
+    private String _strLat;
+    private String _strLon;
 
     /**
-     * {@inheritDoc }
+     * Returns the Lat
+     * 
+     * @return The Lat
      */
-    @Override
-    public Collection<DataObject> getDataObjects( )
+    public String getLat( )
     {
-        SignalementDAO dao = new SignalementDAO( );
-        return dao.selectSignalementDataObjectsList( _plugin );
-    }
-    
-    /**
-     * {@inheritDoc }
-     */
-    @Override
-    public boolean isLocalizable()
-    {
-        return true;
+        return _strLat;
     }
 
+    /**
+     * Sets the Lat
+     * 
+     * @param strLat
+     *            The Lat
+     */
+    public void setLat( String strLat )
+    {
+        _strLat = strLat;
+    }
+
+    /**
+     * Returns the Lon
+     * 
+     * @return The Lon
+     */
+    public String getLon( )
+    {
+        return _strLon;
+    }
+
+    /**
+     * Sets the Lon
+     * 
+     * @param strLon
+     *            The Lon
+     */
+    public void setLon( String strLon )
+    {
+        _strLon = strLon;
+    }
 }

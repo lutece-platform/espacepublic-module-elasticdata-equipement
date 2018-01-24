@@ -8,10 +8,10 @@
 
     <modelVersion>4.0.0</modelVersion>
     <groupId>fr.paris.lutece.plugins</groupId>
-    <artifactId>module-elasticdata-dansmarue</artifactId>
+    <artifactId>module-elasticdata-equipement</artifactId>
     <packaging>lutece-plugin</packaging>
-    <version>1.0.1-SNAPSHOT</version>
-    <name>Lutece elasticdata dansmarue module</name>
+    <version>1.0.0-SNAPSHOT</version>
+    <name>Lutece elasticdata dansmarue-equipement module</name>
 
     <repositories>
         <repository>
@@ -48,9 +48,9 @@
     </properties>
     
     <scm>
-        <connection>scm:git:https://github.com/lutece-secteur-public/espacepublic-module-elasticdata-dansmarue.git</connection>
-        <developerConnection>scm:git:https://github.com/lutece-secteur-public/espacepublic-module-elasticdata-dansmarue.git</developerConnection>
-        <url>https://github.com/lutece-secteur-public/espacepublic-module-elasticdata-dansmarue.git</url>
+        <connection>scm:git:https://github.com/lutece-secteur-public/espacepublic-module-elasticdata-equipement.git</connection>
+        <developerConnection>scm:git:https://github.com/lutece-secteur-public/espacepublic-module-elasticdata-equipement.git</developerConnection>
+        <url>https://github.com/lutece-secteur-public/espacepublic-module-elasticdata-equipement.git</url>
       <tag>HEAD</tag>
   </scm> 
         
